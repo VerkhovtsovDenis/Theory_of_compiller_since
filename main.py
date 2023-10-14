@@ -1,8 +1,13 @@
 import unittest
 from LanguageHandTest import LanguageHandTest
+from LanguageAutoTest import LanguageAutoTest
 from Language import Language
 
 LanguageHandTest()
+LanguageAutoTest()
+
+TESTING = True
+
 
 def main():
     l1, l2, _ = LanguageHandTest.readfile()
@@ -12,8 +17,10 @@ def main():
 
     print(result)
 
-if __name__ == '__main__':
-    main()
-    #unittest.main()
 
+if __name__ == '__main__':
+    if TESTING:
+        unittest.main()
+    else:
+        main()
 
